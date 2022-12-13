@@ -13,3 +13,48 @@
   margin-top: 20px;
   color: rgb(223, 206, 10);
 }
+
+.button-for-action {
+  display: flex;
+}
+
+.hire-me-button {
+  background-color: #ff854c;
+  text-align: center;
+  width: 180px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 90px;
+  cursor: pointer;
+  border: 2px solid yellow;
+  font-size: 17px;
+}
+.hire-me-button:hover {
+  background-color: white;
+  width: 220px;
+  color: black;
+  transition-duration: 1s;
+}
+.get-resume-button {
+  background-color: #e0d203;
+  text-align: center;
+  width: 180px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 90px;
+  cursor: pointer;
+  border: 2px solid yellow;
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+.get-resume-button:hover {
+  background-color: white;
+  width: 220px;
+  color: black;
+  transition-duration: 1s;
+}
+.get-resume-button a {
+  text-decoration: none;
+  color: black;
+}
