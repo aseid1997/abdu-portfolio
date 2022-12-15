@@ -83,7 +83,7 @@ const TechStack = () => {
     setShowMoreTechStack((prev) => prev + 3);
   };
   return (
-    <div className="container tech-stack-section">
+    <div className="container tech-stack-section" id="techstack">
       <div className="section-title">
         <h5>Tech Stack</h5>
         <span className="line"></span>

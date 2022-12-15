@@ -44,12 +44,13 @@ const Testimonial = () => {
 
   var settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
     autoplay: true,
+    rows: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -79,9 +80,9 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="container testimonial-section">
+    <div className="container testimonial-section" id="testimonial">
       <div className="section-title">
-        <h5>Tech Stack</h5>
+        <h5>Testimonial</h5>
         <span className="line"></span>
       </div>
       <div className="testimonial-slider">
@@ -94,9 +95,9 @@ const Testimonial = () => {
                   alt="testimonial"
                   className="center-image"
                 />
-                <p>{item.desc}</p>
                 <p>{item.name}</p>
                 <p>{item.position}</p>
+                <p>{item.desc}</p>
               </div>
             </div>
           ))}

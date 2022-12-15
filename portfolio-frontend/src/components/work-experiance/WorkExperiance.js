@@ -80,7 +80,7 @@ const WorkExperiance = () => {
   ];
 
   return (
-    <div className="container work-experiance-section">
+    <div className="container work-experiance-section" id="experiance">
       <div className="section-title">
         <h5>Work Experiance </h5>
         <span className="line"></span>

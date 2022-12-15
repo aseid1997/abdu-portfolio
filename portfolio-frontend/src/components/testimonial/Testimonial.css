@@ -6,7 +6,7 @@
 .content-slider {
   padding: 10px;
   color: white;
-  background-color: tomato;
+  background-color: rgb(248, 139, 122);
   margin: 5px;
   margin-bottom: 30px;
   cursor: pointer;
@@ -15,6 +15,16 @@
   text-align: center;
   justify-content: center;
 }
+
+.content-slider:hover {
+  background-color: rgb(43, 214, 226);
+  transition-duration: 1s;
+  color: black;
+  box-shadow: 15px 9px 9px -2px rgba(39, 17, 17, 0.86);
+  -webkit-box-shadow: 15px 9px 9px -2px rgba(230, 224, 224, 0.86);
+  -moz-box-shadow: 15px 9px 9px -2px rgba(230, 224, 224, 0.86);
+}
+
 .content-slider-main {
   margin-top: 70px;
 }
@@ -30,4 +40,24 @@
   justify-content: center;
   align-items: center;
   border: 5px solid yellow;
+}
+
+.slick-prev:before {
+  color: #ff1024 !important;
+}
+.slick-next:before {
+  color: #ff1024 !important;
+}
+
+.slick-disable {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+#dark .content-slider {
+  background-color: #38004c;
+  color: white;
+  box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
 }

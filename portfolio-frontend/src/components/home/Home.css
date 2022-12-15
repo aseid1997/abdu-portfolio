@@ -58,3 +58,33 @@
   text-decoration: none;
   color: black;
 }
+
+.theme-change {
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  background-color: #001cce;
+  right: 0;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  position: fixed;
+  top: 150;
+  margin-top: 250px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.sun-theme-icon {
+  animation: rotation infinite 5s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
