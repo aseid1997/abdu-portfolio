@@ -5,6 +5,8 @@ import CV from "../../assets/CV.pdf";
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
 import Fade from "react-reveal/Fade";
 
+import { Link } from "react-scroll";
+
 const Home = ({ theme, changeTheme }) => {
   return (
     <>
@@ -41,7 +43,15 @@ const Home = ({ theme, changeTheme }) => {
           </Fade>
           <Fade right>
             <div className="button-for-action">
-              <div className="hire-me-button">Hire Me</div>
+              <Link
+                spy={true}
+                duration={100}
+                offset={100}
+                smooth={true}
+                to="contact"
+              >
+                <div className="hire-me-button">Hire Me</div>
+              </Link>
               <div className="get-resume-button">
                 <a href={CV} download="Abdu_CV">
                   Get Resume

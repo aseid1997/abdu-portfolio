@@ -1,9 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import img from "../../assets/images/img10.jpg";
 import { RiSendPlaneFill } from "react-icons/ri";
 import Fade from "react-reveal/Fade";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Contact = () => {
+  const API = "http://localhost:8000/sendemail";
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [jobType, setJobType] = useState("");
+  const [messge, setMessge] = useState("");
+
+  const sendEmailInfo = () => {
+    fetch(API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        jobType,
+        messge,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.error) {
+          toast.error(result.error, {
+            position: toast.POSITION.TOP_RIGHT,
+            draggable: true,
+          });
+        } else {
+          toast.success("Succesfully sent", {
+            position: toast.POSITION.TOP_RIGHT,
+            draggable: true,
+          });
+          setName("");
+          setEmail("");
+          setJobType("");
+          setMessge("");
+        }
+      })
+      .catch((err) => {
+        console.log(err.messege);
+      });
+  };
   return (
     <div className="container contact-section" id="contact">
       <div className="row">
@@ -30,6 +76,8 @@ const Contact = () => {
                     className="form-control"
                     id="name"
                     name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="contact-form">
@@ -41,13 +89,20 @@ const Contact = () => {
                     className="form-control"
                     id="email"
                     name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="contact-form">
                   <label htmlFor="jobtype" className="form-label">
                     Job Types
                   </label>
-                  <select className="custom-select-tag" id="jobtype">
+                  <select
+                    className="custom-select-tag"
+                    id="jobtype"
+                    value={jobType}
+                    onChange={(e) => setJobType(e.target.value)}
+                  >
                     <option value="">Select Job Type</option>
                     <option value="Full Time">Full Time</option>
                     <option value="Part Time">Part Time</option>
@@ -65,9 +120,11 @@ const Contact = () => {
                     className="form-control"
                     id="email"
                     name="email"
+                    value={messge}
+                    onChange={(e) => setMessge(e.target.value)}
                   ></textarea>
                 </div>
-                <div className="button-submit">
+                <div className="button-submit" onClick={sendEmailInfo}>
                   <p>
                     Send <RiSendPlaneFill size={20} />
                   </p>
@@ -77,6 +134,7 @@ const Contact = () => {
           </div>
         </Fade>
       </div>
+      <ToastContainer autoClose={8000} />
     </div>
   );
 };
