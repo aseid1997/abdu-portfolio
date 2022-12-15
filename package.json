@@ -1,0 +1,27 @@
+{
+  "name": "abdu-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aseid1997/abdu-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aseid1997/abdu-portfolio/issues"
+  },
+  "homepage": "https://github.com/aseid1997/abdu-portfolio#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "expess": "^0.0.1-security",
+    "nodemailer": "^6.8.0",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  }
+}

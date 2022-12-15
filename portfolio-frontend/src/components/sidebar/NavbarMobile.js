@@ -12,7 +12,8 @@ import {
   FcTodoList,
 } from "react-icons/fc";
 import { MdBiotech } from "react-icons/md";
-const NavbarMobile = () => {
+import Switch from "react-switch";
+const NavbarMobile = ({ theme, changeTheme }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -122,6 +123,9 @@ const NavbarMobile = () => {
                 {" "}
                 <FcContacts size={25} /> Contact
               </Link>
+            </li>
+            <li className="nav-item-mobile">
+              <Switch onChange={changeTheme} checked={theme === "light"} />
             </li>
           </ul>
         </div>
